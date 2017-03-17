@@ -1,0 +1,286 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4DDF15D7-9B76-4140-AA47-B6111C0EB5C4}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>VerifySign</RootNamespace>
+    <AssemblyName>VerifySign</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Florentis.InteropFlSigCapt, Version=3.0.4.0, Culture=neutral, PublicKeyToken=9fbfea2d6fdc8a6c, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Common Files\Florentis\Florentis.InteropFlSigCapt.dll</HintPath>
+    </Reference>
+    <Reference Include="Florentis.InteropFlSigCOM, Version=3.0.4.0, Culture=neutral, PublicKeyToken=9fbfea2d6fdc8a6c, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Common Files\Florentis\Florentis.InteropFlSigCOM.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.wgssDSV">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Wacom\Dynamic Signature Verification\Interop.wgssDSV.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.10.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.10\lib\itextsharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PdfiumViewer, Version=2.6.1.0, Culture=neutral, PublicKeyToken=91e4789cfb0609e0, processorArchitecture=MSIL">
+      <HintPath>..\packages\PdfiumViewer.2.6.1.0\lib\net20\PdfiumViewer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CertificateSelector.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CertificateSelector.Designer.cs">
+      <DependentUpon>CertificateSelector.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FileInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FileInfo.designer.cs">
+      <DependentUpon>FileInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PDFViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PDFViewer.designer.cs">
+      <DependentUpon>PDFViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NameReasonInput.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NameReasonInput.Designer.cs">
+      <DependentUpon>NameReasonInput.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SignatureCollectorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SignatureCollectorForm.Designer.cs">
+      <DependentUpon>SignatureCollectorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SignatureCompareForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SignatureCompareForm.Designer.cs">
+      <DependentUpon>SignatureCompareForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SignatureDatabaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SignatureDatabaseForm.Designer.cs">
+      <DependentUpon>SignatureDatabaseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SignatureImageExtractor.cs" />
+    <Compile Include="SignatureInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SignatureInfo.designer.cs">
+      <DependentUpon>SignatureInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SignatureReference.cs" />
+    <Compile Include="SignatureVerifier.cs" />
+    <Compile Include="WebManager.cs" />
+    <Compile Include="WorkflowManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WorkflowManager.Designer.cs">
+      <DependentUpon>WorkflowManager.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="CertificateSelector.resx">
+      <DependentUpon>CertificateSelector.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FileInfo.resx">
+      <DependentUpon>FileInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PDFViewer.resx">
+      <DependentUpon>PDFViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NameReasonInput.resx">
+      <DependentUpon>NameReasonInput.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="SignatureCollectorForm.resx">
+      <DependentUpon>SignatureCollectorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SignatureCompareForm.resx">
+      <DependentUpon>SignatureCompareForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SignatureDatabaseForm.resx">
+      <DependentUpon>SignatureDatabaseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SignatureInfo.resx">
+      <DependentUpon>SignatureInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WorkflowManager.resx">
+      <DependentUpon>WorkflowManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Certificates\cert.pfx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="dsv.cfg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Lorem Ipsum.pdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Portal\css\bootstrap-theme.css.map">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Portal\css\bootstrap-theme.min.css.map">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Portal\css\bootstrap.css.map">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Portal\css\bootstrap.min.css.map">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Portal\docs\DocumentB.pdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Portal\fonts\glyphicons-halflings-regular.eot">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Portal\fonts\glyphicons-halflings-regular.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Portal\fonts\glyphicons-halflings-regular.woff">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Portal\fonts\glyphicons-halflings-regular.woff2">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Portal\docs\DocumentA.pdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\integrity.png" />
+    <None Include="Resources\verified.png" />
+    <None Include="Resources\integrity_fail.png" />
+    <None Include="Resources\verify_fail.png" />
+    <Content Include="Portal\css\bootstrap-theme.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Portal\css\bootstrap-theme.min.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Portal\css\bootstrap.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Portal\css\bootstrap.min.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Portal\fonts\glyphicons-halflings-regular.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Portal\index.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Portal\js\bootstrap.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Portal\js\bootstrap.min.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Portal\js\dms.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Portal\js\handlebars-v4.0.5.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Portal\js\jquery-3.1.1.min.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Portal\js\npm.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\blue_sign.ico" />
+    <None Include="Resources\integrity_red.png" />
+    <None Include="Resources\integrity_yellow.png" />
+    <Content Include="x64\pdfium.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="x86\pdfium.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
